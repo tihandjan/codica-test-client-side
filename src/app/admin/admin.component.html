@@ -1,1 +1,40 @@
-<router-outlet></router-outlet>
+<nav>
+    <div class="nav-wrapper purple">
+        <a href="#" class="brand-logo">Admin</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a (click)="signOut()">Logout</a></li>
+    </ul>
+</div>
+</nav>
+
+<div class="admin">
+    <div class="row">
+        <div class="col s2">
+            <div class="admin-sidenav">
+                <a class="admin-sidenav__item" [routerLink]="['/']">
+                    <i>
+                        <svg baseProfile="tiny"  id="Layer_1" version="1.2" viewBox="0 0 24 24"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M17,9c0-1.381-0.56-2.631-1.464-3.535C14.631,4.56,13.381,4,12,4S9.369,4.56,8.464,5.465C7.56,6.369,7,7.619,7,9  s0.56,2.631,1.464,3.535C9.369,13.44,10.619,14,12,14s2.631-0.56,3.536-1.465C16.44,11.631,17,10.381,17,9z"/><path d="M6,19c0,1,2.25,2,6,2c3.518,0,6-1,6-2c0-2-2.354-4-6-4C8.25,15,6,17,6,19z"/></svg>
+                    </i>
+                    <span>Visit site</span>
+                </a>
+                <a class="admin-sidenav__item" [routerLink]="['/admin', 'dashboard']">
+                    <i>
+                        <svg baseProfile="tiny"  id="Layer_1" version="1.2" viewBox="0 0 24 24"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M17,9c0-1.381-0.56-2.631-1.464-3.535C14.631,4.56,13.381,4,12,4S9.369,4.56,8.464,5.465C7.56,6.369,7,7.619,7,9  s0.56,2.631,1.464,3.535C9.369,13.44,10.619,14,12,14s2.631-0.56,3.536-1.465C16.44,11.631,17,10.381,17,9z"/><path d="M6,19c0,1,2.25,2,6,2c3.518,0,6-1,6-2c0-2-2.354-4-6-4C8.25,15,6,17,6,19z"/></svg>
+                    </i>
+                    <span>Dashboard</span>
+                </a>
+                <a class="admin-sidenav__item" [routerLink]="['/admin', 'authors']">
+                    <i>
+                        <svg baseProfile="tiny"  id="Layer_1" version="1.2" viewBox="0 0 24 24"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M17,9c0-1.381-0.56-2.631-1.464-3.535C14.631,4.56,13.381,4,12,4S9.369,4.56,8.464,5.465C7.56,6.369,7,7.619,7,9  s0.56,2.631,1.464,3.535C9.369,13.44,10.619,14,12,14s2.631-0.56,3.536-1.465C16.44,11.631,17,10.381,17,9z"/><path d="M6,19c0,1,2.25,2,6,2c3.518,0,6-1,6-2c0-2-2.354-4-6-4C8.25,15,6,17,6,19z"/></svg>
+                    </i>
+                    <span>Authors</span>
+                </a>
+            </div>
+        </div>
+        <div class="col s10">
+            <div class="card-panel">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

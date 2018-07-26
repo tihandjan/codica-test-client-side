@@ -11,8 +11,5 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.auth.signIn({email: 'user@example.com', password: 'pupkov66'}).subscribe(res => {
-      console.log(res);
-    },err => {console.log(err)})
   }
 }

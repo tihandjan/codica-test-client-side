@@ -5,9 +5,6 @@ import { map } from 'rxjs/operators/map';
 import { User } from '../models/user'
 import { Response, RequestOptions, Headers } from '@angular/http';
 import { BehaviorSubject } from 'rxjs';
-// import { Store } from '@ngrx/store';
-// import * as fromRoot from '../redux/reducers/index';
-// import * as actions from '../redux/actions/auth';
 import { environment } from '../../environments/environment';
 declare var Materialize;
 
@@ -16,18 +13,15 @@ export class AuthService {
 
   constructor(
     private auth: Angular2TokenService,
-    // private store: Store<fromRoot.State>
   ) {
     this.auth.init(environment.auth_routes);
     this.auth.validateToken().subscribe(res => {
-      console.log('verrv')
-      if (res.status === 200) {
-        // this.store.dispatch(new actions.Auth()) ;
-        // this.store.dispatch(new actions.GetCurrentUser(res.json().data));
-      } else {
-        // this.store.dispatch(new actions.UnAuth());
-      }
+      console.log(res.json().data);
     })
+  }
+
+  validateUser() {
+    return this.auth.validateToken()
   }
 
   userSignedIn(): boolean {
@@ -81,10 +75,5 @@ export class AuthService {
     headers.append('content-type', 'application/json');
     return new RequestOptions({headers: headers});
   }
-
-  isUserAdmin(): boolean {
-      return true;
-  }
-
 
 }

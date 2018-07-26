@@ -7,6 +7,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminGuard } from '../guards/admin.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { AuthorsComponent } from './components/authors/authors.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { AuthService } from '../services/auth.service';
   declarations: [
     LoginComponent, 
     DashboardComponent, 
-    AdminComponent
+    AdminComponent, AuthorsComponent
   ],
   providers: [
     AdminGuard,
